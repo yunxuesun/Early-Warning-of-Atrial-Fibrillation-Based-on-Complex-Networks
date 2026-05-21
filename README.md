@@ -59,31 +59,3 @@ pip install -r requirements.txt
 
 代码完全跑通后，终端/输出台打印的分类性能报告（如 Accuracy、Sensitivity/Recall、Specificity）将与课程报告第5章“实验结果”中的表格数据完全一致。代码中关键函数均已添加详尽的中文注释，解释了数据流转与算法逻辑。
 
-```
-
----
-
-### 争取“额外加分（0-3分）”的策略
-
-报告要求中提到：“根据程序本身的复杂程度，以及考虑程序打包的难度，灵活加分”。既然你的代码是 Jupyter Notebook，它虽然便于展示，但不算严格意义上的“可执行程序”。
-
-**建议操作：提供“一键执行”的批处理文件**
-除了提交 `.ipynb` 文件，你可以将 Notebook 导出为 `.py` 脚本（例如 `run_RQA.py` 和 `run_RCN.py`），然后在根目录下提供一个 `run.bat` (Windows) 或 `run.sh` (Mac/Linux)。
-
-**`一键运行测试.bat` 内容示例：**
-```bat
-@echo off
-echo 正在检查并安装必要环境...
-pip install -r requirements.txt
-echo 环境检查完毕，开始执行 RQA 分析模块...
-python run_RQA.py
-echo RQA 分析模块执行完毕，开始执行 RCN 分析模块...
-python run_RCN.py
-echo 全部实验执行完毕！请核对控制台输出结果。
-pause
-
-```
-
-在你的报告提交说明中，明确指出：“**除了配套的代码源码外，本项目提供了 `一键运行测试.bat` 脚本，双击即可全自动完成环境配置、数据预处理、特征提取到模型评估的完整流程，实现了程序的开箱即用。**” 这样极大概率能拿到打包和工程化规范的额外加分。
-
-你需要我帮你把 `RQN.ipynb` 和 `RCN.ipynb` 的核心逻辑整合成一个可以直接打包运行的纯 Python 脚本吗？
